@@ -1,0 +1,176 @@
+:host {
+    display: block
+}
+
+.auth-page {
+    display: flex;
+    min-height: 100vh
+}
+
+.auth-art {
+    background: #153b2b;
+    color: #dcebe2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px 8%;
+    position: relative;
+    overflow: hidden;
+    width: 48%
+}
+
+.auth-art:after {
+    border: 1px solid #79d69d36;
+    border-radius: 50%;
+    content: '';
+    height: 560px;
+    position: absolute;
+    right: -230px;
+    top: 20%;
+    width: 560px
+}
+
+.brand {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font: 800 20px Manrope, sans-serif;
+    gap: 9px;
+    position: relative;
+    z-index: 1
+}
+
+.brand>span:last-child,
+.brand span span {
+    color: #8ed2a7
+}
+
+.brand-mark {
+    align-items: center;
+    background: #79d69d;
+    border-radius: 8px;
+    color: #153b2b;
+    display: flex;
+    font-size: 23px;
+    height: 30px;
+    justify-content: center;
+    width: 30px
+}
+
+.art-copy {
+    position: relative;
+    z-index: 1
+}
+
+.art-copy p,
+.eyebrow {
+    color: #8ed2a7;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.6px
+}
+
+.art-copy h1 {
+    font: 800 clamp(37px, 4vw, 62px)/1.05 Manrope;
+    letter-spacing: -2px;
+    margin: 20px 0
+}
+
+.art-copy em {
+    color: #a8e3ba;
+    font-style: normal
+}
+
+.art-copy span {
+    color: #abc1b5;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 335px;
+    display: block
+}
+
+.art-note {
+    color: #8eaa9b;
+    font-size: 12px;
+    position: relative;
+    z-index: 1
+}
+
+.auth-main {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 30px
+}
+
+.auth-box {
+    max-width: 390px;
+    width: 100%
+}
+
+.mobile-brand {
+    display: none
+}
+
+.eyebrow {
+    color: var(--green);
+    margin-bottom: 13px
+}
+
+.auth-box h2 {
+    font: 800 30px Manrope;
+    margin: 0
+}
+
+.muted {
+    color: var(--muted);
+    margin: 9px 0 30px
+}
+
+.submit {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    width: 100%
+}
+
+.submit span {
+    font-size: 20px
+}
+
+.switch {
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+    margin-top: 25px
+}
+
+.switch a {
+    color: var(--green);
+    font-weight: 700
+}
+
+@media(max-width:760px) {
+    .auth-art {
+        display: none
+    }
+    .auth-main {
+        align-items: flex-start;
+        padding: 36px 24px
+    }
+    .mobile-brand {
+        align-items: center;
+        color: #173d2d;
+        display: flex;
+        font: 800 20px Manrope;
+        gap: 9px;
+        margin-bottom: 64px
+    }
+    .mobile-brand .brand-mark {
+        font-size: 20px;
+        height: 28px;
+        width: 28px
+    }
+}

@@ -1,0 +1,25 @@
+<div class="auth-page">
+    <div class="auth-art"><a class="brand"><span class="brand-mark">+</span> Folha<span>Verde</span></a>
+        <div class="art-copy">
+            <p>Seu dinheiro, mais claro.</p>
+            <h1>Organize hoje.<br><em>Respire melhor.</em></h1><span>Uma visão simples e humana para cuidar das suas escolhas financeiras.</span></div>
+        <div class="art-note">“Pequenas decisões constroem grandes tranquilidades.”</div>
+    </div>
+    <main class="auth-main">
+        <div class="auth-box">
+            <div class="mobile-brand"><span class="brand-mark">+</span> FolhaVerde</div>
+            <p class="eyebrow">BEM-VINDO DE VOLTA</p>
+            <h2>Acesse sua conta</h2>
+            <p class="muted">Acompanhe seu dinheiro com mais intenção.</p>
+            <div class="notice error" *ngIf="erro()">{{ erro() }}</div>
+            <form [formGroup]="formulario" (ngSubmit)="entrar()" novalidate>
+                <div class="field"><label for="email">E-mail</label><input id="email" type="email" formControlName="email" placeholder="voce@email.com"><span class="error-text" *ngIf="formulario.controls.email.touched && formulario.controls.email.invalid">Informe um e-mail válido.</span></div>
+                <div
+                    class="field"><label for="senha">Senha</label><input id="senha" type="password" formControlName="senha" placeholder="••••••••"><span class="error-text" *ngIf="formulario.controls.senha.touched && formulario.controls.senha.invalid">A senha deve ter ao menos 6 caracteres.</span></div>
+        <button
+            class="btn btn-primary submit" [disabled]="carregando()">{{ carregando() ? 'Entrando...' : 'Entrar na conta' }} <span>→</span></button>
+            </form>
+            <p class="switch">Ainda não tem uma conta? <a routerLink="/cadastro">Criar cadastro</a></p>
+</div>
+</main>
+</div>

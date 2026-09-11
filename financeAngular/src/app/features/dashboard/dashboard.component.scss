@@ -1,0 +1,264 @@
+.heading {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin: 0 0 9px
+}
+
+.heading h1 {
+    font: 800 30px Manrope;
+    margin: 0
+}
+
+.muted {
+    color: var(--muted);
+    margin: 8px 0 0
+}
+
+.date {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 10px 12px
+}
+
+.date span {
+    color: var(--green);
+    font-size: 16px;
+    margin-left: 15px
+}
+
+.cards {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.metric {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px
+}
+
+.metric.balance {
+    background: #1d8354;
+    border-color: #1d8354;
+    color: #fff
+}
+
+.metric.balance.negative {
+    background: #bd514a
+}
+
+.metric-top {
+    align-items: center;
+    color: #8a9990;
+    display: flex;
+    font-size: 10px;
+    font-weight: 700;
+    gap: 9px;
+    letter-spacing: 1.2px
+}
+
+.balance .metric-top {
+    color: #c7ecd5
+}
+
+.metric-icon {
+    align-items: center;
+    background: #e4f6eb;
+    border-radius: 7px;
+    color: var(--green);
+    display: flex;
+    font-size: 17px;
+    height: 28px;
+    justify-content: center;
+    width: 28px
+}
+
+.metric-icon.expense {
+    background: #fff0ec;
+    color: var(--red)
+}
+
+.balance .metric-icon {
+    background: #ffffff25;
+    color: #fff
+}
+
+.metric strong {
+    display: block;
+    font: 800 25px Manrope;
+    margin: 18px 0 5px
+}
+
+.metric small {
+    color: var(--muted);
+    font-size: 12px
+}
+
+.balance small {
+    color: #c7ecd5
+}
+
+.lower {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1.65fr 1fr;
+    margin-top: 16px
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px
+}
+
+.panel-title {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between
+}
+
+.panel h2 {
+    font: 700 17px Manrope;
+    margin: 0
+}
+
+.panel-title p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 5px 0
+}
+
+.legend {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 3px
+}
+
+.legend i,
+.legend b {
+    border-radius: 50%;
+    display: inline-block;
+    height: 7px;
+    margin: 0 4px;
+    width: 7px
+}
+
+.legend i {
+    background: var(--green)
+}
+
+.legend b {
+    background: #f2b37b;
+    margin-left: 10px
+}
+
+.chart {
+    height: 185px;
+    margin-top: 15px;
+    position: relative
+}
+
+.bar-group {
+    align-items: flex-end;
+    bottom: 18px;
+    display: flex;
+    gap: 12px;
+    height: 145px;
+    left: 55px;
+    position: absolute
+}
+
+.bar {
+    border-radius: 5px 5px 0 0;
+    display: block;
+    width: 32px
+}
+
+.income-bar {
+    background: var(--green)
+}
+
+.expense-bar {
+    background: #f1b27c
+}
+
+.bar-group small {
+    bottom: -20px;
+    color: var(--muted);
+    font-size: 10px;
+    left: 30px;
+    position: absolute
+}
+
+.axis {
+    color: #a1ada5;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    height: 145px;
+    justify-content: space-between;
+    left: 0;
+    position: absolute;
+    top: 0
+}
+
+.insight {
+    background: #eff8f1;
+    border-color: #d9eedf
+}
+
+.insight-icon {
+    align-items: center;
+    background: #c9ebd2;
+    border-radius: 9px;
+    color: var(--green);
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    width: 35px
+}
+
+.insight h2 {
+    font-size: 18px;
+    line-height: 1.25;
+    margin: 22px 0 8px;
+    max-width: 180px
+}
+
+.insight p {
+    color: #6c8274;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 220px
+}
+
+@media(max-width:800px) {
+    .cards {
+        grid-template-columns: 1fr
+    }
+    .lower {
+        grid-template-columns: 1fr
+    }
+    .heading h1 {
+        font-size: 24px
+    }
+    .date {
+        display: none
+    }
+}

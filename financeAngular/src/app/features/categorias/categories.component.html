@@ -1,0 +1,26 @@
+<section class="page">
+    <div class="heading">
+        <div>
+            <p class="eyebrow">ORGANIZAÇÃO</p>
+            <h1>Categorias</h1>
+            <p class="muted">Dê contexto para cada escolha financeira.</p>
+        </div><button class="btn btn-primary" (click)="iniciarNova()">+ Nova categoria</button></div>
+    <div class="notice error" *ngIf="erro()">{{erro()}}</div>
+    <div class="notice success" *ngIf="sucesso()">{{sucesso()}}</div>
+    <div class="panel form-panel" *ngIf="editando()">
+        <h2>{{idEmEdicao() ? 'Editar categoria' : 'Nova categoria'}}</h2>
+        <form [formGroup]="formulario" (ngSubmit)="salvar()">
+            <div class="field"><label>Nome da categoria</label><input formControlName="nome" placeholder="Ex.: Alimentação"><span class="error-text" *ngIf="formulario.controls.nome.touched && formulario.controls.nome.invalid">Informe um nome.</span></div>
+            <div class="actions"><button type="button" class="btn btn-quiet" (click)="cancelar()">Cancelar</button><button class="btn btn-primary">Salvar</button></div>
+        </form>
+    </div>
+    <div class="panel table-panel">
+        <div class="panel-title">
+            <h2>Suas categorias</h2><span class="count">{{categorias().length}} itens</span></div>
+        <div class="loading" *ngIf="carregando()">Carregando categorias...</div>
+        <div class="empty" *ngIf="!carregando() && !categorias().length">Nenhuma categoria cadastrada ainda.</div>
+        <div class="category-list" *ngIf="!carregando() && categorias().length">
+            <div class="category-row" *ngFor="let categoria of categorias(); trackBy: rastrearPorId"><span class="cat-dot">{{categoria.nome.charAt(0).toUpperCase()}}</span><strong>{{categoria.nome}}</strong><span class="row-actions"><button class="btn btn-quiet" (click)="editar(categoria)">Editar</button><button class="btn btn-danger" (click)="remover(categoria)">Excluir</button></span></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+<section class="page">
+    <div class="heading">
+        <div>
+            <p class="eyebrow">{{ saudacao() }}</p>
+            <h1>Seu resumo financeiro</h1>
+            <p class="muted">Uma visão tranquila do que está acontecendo com o seu dinheiro.</p>
+        </div>
+        <div class="date">SETEMBRO 2026 <span>⌄</span></div>
+    </div>
+    <div class="notice error" *ngIf="erro()">{{ erro() }}</div>
+    <div class="loading" *ngIf="carregando()">Carregando seu resumo...</div>
+    <ng-container *ngIf="resumo() as dados">
+        <div class="cards">
+            <article class="metric">
+                <div class="metric-top"><span class="metric-icon income">↗</span><span>RECEITAS</span></div><strong>{{dados.receitas | currencyBrl}}</strong><small>Entradas do período</small></article>
+            <article class="metric">
+                <div class="metric-top"><span class="metric-icon expense">↘</span><span>DESPESAS</span></div><strong>{{dados.despesas | currencyBrl}}</strong><small>Saídas do período</small></article>
+            <article class="metric balance" [class.negative]="dados.saldo < 0">
+                <div class="metric-top"><span class="metric-icon">◈</span><span>SALDO ATUAL</span></div><strong>{{dados.saldo | currencyBrl}}</strong><small>{{dados.saldo >= 0 ? 'Você está no caminho certo' : 'Atenção ao saldo do período'}}</small></article>
+        </div>
+        <div class="lower">
+            <article class="panel chart-panel">
+                <div class="panel-title">
+                    <div>
+                        <h2>Receitas x despesas</h2>
+                        <p>Comparativo do período atual</p>
+                    </div><span class="legend"><i></i> Receitas <b></b> Despesas</span></div>
+                <div class="chart" aria-label="Gráfico comparativo de receitas e despesas">
+                    <div class="bar-group"><span class="bar income-bar" [style.height.%]="alturaBarra(dados.receitas, dados)"></span><span class="bar expense-bar" [style.height.%]="alturaBarra(dados.despesas, dados)"></span><small>SET</small></div>
+                    <div class="axis"><span>R$ 5k</span><span>R$ 2.5k</span><span>R$ 0</span></div>
+                </div>
+            </article>
+            <article class="panel insight"><span class="insight-icon">✦</span>
+                <h2>Um bom hábito começa pequeno.</h2>
+                <p>Registrar cada movimento deixa suas decisões mais conscientes e o seu futuro mais leve.</p>
+            </article>
+        </div>
+    </ng-container>
+</section>

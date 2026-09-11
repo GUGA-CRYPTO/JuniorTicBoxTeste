@@ -1,0 +1,20 @@
+<div class="shell">
+    <aside class="sidebar">
+        <a class="brand" routerLink="/dashboard"><span class="brand-mark">+</span><span>Folha<span>Verde</span></span></a>
+        <p class="nav-label">VISÃO GERAL</p>
+        <nav>
+            <a routerLink="/dashboard" routerLinkActive="active"><span>◒</span> Resumo</a>
+            <a routerLink="/transacoes" routerLinkActive="active"><span>↕</span> Transações</a>
+            <a routerLink="/categorias" routerLinkActive="active"><span>◫</span> Categorias</a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="avatar">{{ auth.sessao()?.email?.charAt(0)?.toUpperCase() }}</div>
+            <div class="user-info"><strong>{{ auth.sessao()?.email }}</strong><small>Conta pessoal</small></div>
+            <button class="logout" aria-label="Sair" (click)="auth.logout()">↪</button>
+        </div>
+    </aside>
+    <main class="content">
+        <header class="mobile-header"><a class="brand" routerLink="/dashboard"><span class="brand-mark">+</span> FolhaVerde</a><button class="logout" (click)="auth.logout()">↪</button></header>
+        <router-outlet />
+    </main>
+</div>

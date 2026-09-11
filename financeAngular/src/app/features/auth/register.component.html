@@ -1,0 +1,25 @@
+<div class="auth-page">
+    <div class="auth-art"><a class="brand"><span class="brand-mark">+</span> Folha<span>Verde</span></a>
+        <div class="art-copy">
+            <p>UM NOVO COMEÇO</p>
+            <h1>Clareza para<br><em>viver melhor.</em></h1><span>Crie seu espaço pessoal e transforme números em decisões mais leves.</span></div>
+        <div class="art-note">Comece com o que você tem. A consistência vem depois.</div>
+    </div>
+    <main class="auth-main">
+        <div class="auth-box">
+            <div class="mobile-brand"><span class="brand-mark">+</span> FolhaVerde</div>
+            <p class="eyebrow">PRIMEIRO PASSO</p>
+            <h2>Crie sua conta</h2>
+            <p class="muted">É simples, seguro e leva menos de um minuto.</p>
+            <div class="notice error" *ngIf="erro()">{{erro()}}</div>
+            <form [formGroup]="formulario" (ngSubmit)="cadastrar()" novalidate>
+                <div class="field"><label>E-mail</label><input type="email" formControlName="email" placeholder="voce@email.com"><span class="error-text" *ngIf="formulario.controls.email.touched && formulario.controls.email.invalid">Informe um e-mail válido.</span></div>
+                <div
+                    class="field"><label>Senha</label><input type="password" formControlName="senha" placeholder="Mínimo de 6 caracteres"><span class="error-text" *ngIf="formulario.controls.senha.touched && formulario.controls.senha.invalid">A senha deve ter ao menos 6 caracteres.</span></div>
+        <button
+            class="btn btn-primary submit" [disabled]="carregando()">{{carregando()?'Criando conta...':'Criar minha conta'}} <span>→</span></button>
+            </form>
+            <p class="switch">Já tem uma conta? <a routerLink="/login">Entrar</a></p>
+</div>
+</main>
+</div>
